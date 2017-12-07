@@ -1,7 +1,9 @@
 <template>
     <div class="theApp">
         <div class="container">
-            <h2>{{ msg }} - {{ posts.length }}</h2>
+            <h2>{{ msg }} - total clicks {{ total }}</h2>
+            <Counter v-on:increment="incrementTotal" v-bind:total="total"></Counter>
+            <Counter v-on:increment="incrementTotal" v-bind:total="total"></Counter>
             <Counter v-on:increment="incrementTotal" v-bind:total="total"></Counter>
         </div>
         <div class="container">
@@ -9,7 +11,7 @@
             <Users v-bind:posts="posts"></Users>
         </div>
         <div class="container">
-            <CheckBoxes v-bind:checkedNames="checkedNames" />
+            <CheckBoxes v-bind:checkedNames="checkedNames" v-on:update-checkedarr="updateCheckedArr" />
         </div>
         <div class="container">
             <Hello v-bind:items="items"></Hello>
@@ -30,6 +32,7 @@
             return {
                 total: 0,
                 msg: 'The App',
+                checkedNames: [],
                 items: [{
                     id: 0,
                     title: 'item 1',
@@ -50,13 +53,15 @@
                     id: 4,
                     title: 'item 5',
                     done: true
-                }],
-                checkedNames: []
+                }]
             }
         },
         methods: {
-            incrementTotal: () => {
+            incrementTotal: function() {
                 this.total += 1;
+            },
+            updateCheckedArr(arr) {
+                this.checkedNames = arr;
             }
         },
         components: {

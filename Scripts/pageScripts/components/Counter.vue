@@ -1,8 +1,5 @@
 <template>
-    <div>
-        <p>Total: {{ total }}</p>
         <button type="button" v-on:click="incrementCounter">{{ counter }}</button>
-    </div>
 </template>
 
 <script>
