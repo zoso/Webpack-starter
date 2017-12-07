@@ -8,7 +8,7 @@ let config = {
         './index.js', './Scripts/pageScripts/fileA.js', './Scripts/pageScripts/fileB.js', './Styles/global/scaffold.scss'
     ], */
     entry: {
-        main: './index.js',
+        main: './Scripts/pageScripts/index.js',
         fileA: './Scripts/pageScripts/fileA.js',
         fileB: './Scripts/pageScripts/fileB.js',
         vueApp: './Scripts/pageScripts/myVueEntryFile.js',

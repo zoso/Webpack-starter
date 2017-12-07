@@ -13,6 +13,6 @@ const volvo = new Car;
 
 volvo.manufacturer('volvo');
 
-const fileA = require('./Scripts/pageScripts/fileA')
+const fileA = require('./fileA')
 
-const fileB = require('./Scripts/pageScripts/fileB')
+const fileB = require('./fileB')
