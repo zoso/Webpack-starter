@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const extractScss = require('extract-text-webpack-plugin');
-// const autoprefixer = require('autoprefixer-loader');
+const pkg = require('./package.json');
 
 let config = {
     /* entry: [
@@ -46,10 +46,8 @@ let config = {
     resolve: {
         alias: {
           'vue$': 'vue/dist/vue.esm.js'
-        },
-        //extensions: ['*', '.js', '.vue', '.json']
+        }
     },
-    //postcss: [ autoprefixer({ browsers: ['last 3 versions'] }) ],
     plugins: [
         new extractScss({
             filename: '../../Styles/dist/[name].bundle.css',
