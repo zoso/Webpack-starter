@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>{{ item.title }} status: {{ item.done }}</p>
-        <button type="button" v-on:click="changeItem(item)">
+        <button type="button" v-on:click="changeItem(item)" v-if="item.done === false">
             Change status
         </button>
     </div>
