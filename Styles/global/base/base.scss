@@ -40,17 +40,19 @@ body {
     min-height: 100vh;
     &>.item {
         &.header {
-            padding: 1em 0;
             margin-bottom: 1em;
-            background-color: #eee;
+        }
+        &.header,
+        &.footer {
+            padding: 1em 0;
+            background-color: #333;
+            color: white;
         }
         &.main {
             
         }
         &.footer {
             margin-top: auto;
-            padding: 1em 0;
-            background-color: #eee;
         }
     }
 }
