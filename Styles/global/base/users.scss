@@ -1,0 +1,12 @@
+.users {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 -.5em;
+    &>.user {
+        margin: 0 .5em 1em;
+        flex: 0 1 calc(33.3333% - 3em);
+        background-color: #ddd;
+        padding: 1em;
+    }
+}

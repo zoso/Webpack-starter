@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Checkboxes</p>
+        <h2>Checkboxes</h2>
         <input type="checkbox" id="item1" value="Item 1" v-model="checkedNames">
         <label for="item1">Item 1</label>
         <input type="checkbox" id="item2" value="Item 2" v-model="checkedNames">

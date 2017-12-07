@@ -1,8 +1,12 @@
 <template>
     <div class="theApp">
         <div class="container">
-            <h2>{{ msg }}</h2>
+            <h2>{{ msg }} - {{ posts.length }}</h2>
             <Counter v-on:increment="incrementTotal" v-bind:total="total"></Counter>
+        </div>
+        <div class="container">
+            <h2>Users</h2>
+            <Users v-bind:posts="posts"></Users>
         </div>
         <div class="container">
             <CheckBoxes v-bind:checkedNames="checkedNames" />
@@ -17,9 +21,11 @@
     import Hello from './Hello.vue';
     import Counter from './Counter.vue';
     import CheckBoxes from './CheckBoxes.vue';
+    import Users from './Users.vue';
 
     export default {
         name: 'app',
+        props: ['posts'],
         data() {
             return {
                 total: 0,
@@ -56,7 +62,8 @@
         components: {
             Hello,
             Counter,
-            CheckBoxes
+            CheckBoxes,
+            Users
         }
     }
 </script>
