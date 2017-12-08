@@ -14,7 +14,7 @@ const vm = new Vue({
     },
     methods: {
         fetchData() {
-            Axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
+            Axios.get('//localhost:3000/users').then(res => {
                 this.posts = res.data;
             });
         }

@@ -1,16 +1,43 @@
 <template>
     <div class="user">
-        {{ post.name }}({{ post.username }})
+        <span v-show="!edit">{{ post.name }}</span>(<span v-show="!edit">{{ post.username }}</span>)
+        <input type="text" v-show="edit" v-model="post.name" />
+        <input type="text" v-show="edit" v-model="post.username" />
         <address>
             <div v-for="(value, key) in post.address">
                 {{key}}: {{ value }}
             </div>
         </address>
+        <button v-on:click="doDelete(post.id)" type="button">
+            Slett bruker
+        </button>
+        <button v-on:click="editUser" type="button">
+            Edit bruker
+        </button>
+        <button v-on:click="saveUser" type="button">
+            Save bruker
+        </button>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['post']
+        props: ['post'],
+        data() {
+            return {
+                edit: false
+            }
+        },
+        methods: {
+            doDelete: function(id) {
+                this.$emit('delete-user', id);
+            },
+            editUser: function() {
+                this.edit = !this.edit;
+            },
+            saveUser: function() {
+
+            }
+        }
     }
 </script>

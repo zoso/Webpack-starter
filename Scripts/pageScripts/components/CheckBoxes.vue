@@ -24,7 +24,6 @@
         },
         methods: {
             arrChanged() {
-                //this.checkedNames = this.checkedArr;
                 this.$emit('update-checkedarr', this.checkedArr);
             }
         }
