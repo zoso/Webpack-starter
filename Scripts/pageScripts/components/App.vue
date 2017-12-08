@@ -8,7 +8,7 @@
         </div>
         <div class="container">
             <h2>Users</h2>
-            <Users v-bind:posts="posts"></Users>
+            <Users v-bind:posts="posts" v-on:update-users="updateUser"></Users>
         </div>
         <div class="container">
             <CheckBoxes v-bind:checkedNames="checkedNames" v-on:update-checkedarr="updateCheckedArr" />
@@ -70,6 +70,10 @@
             },
             updateCheckedArr(arr) {
                 this.checkedNames = arr;
+            },
+            updateUser: function() {
+                console.log("app update");
+                this.$emit('update-user');
             }
         },
         components: {

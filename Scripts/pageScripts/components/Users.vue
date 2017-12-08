@@ -19,23 +19,27 @@
         components: { UserItem, InsertUser },
         methods: {
             createUser: function() {
+                const that = this;
                 Axios.post('//localhost:3000/users/', {
-                    name: 'Freddy',
-                    username: 'Flintstone',
-                    email: 'kdkdkd@rffe.com'
+                    name: 'Freddy Fingerx',
+                    username: 'Flintstonez',
+                    email: 'kdfeffekdkd@rffe.com'
                 })
                 .then(function (response) {
                     console.log(response);
+                    that.$emit('update-users');
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
+                
             },
             deleteUser: function(id) {
                 console.log("delete ", id);
+                this.$emit('update-users');
             },
             changeUser: function() {
-                
+
             }
         }
     }

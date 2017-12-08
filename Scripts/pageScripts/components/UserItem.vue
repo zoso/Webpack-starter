@@ -1,11 +1,11 @@
 <template>
     <div class="user">
-        <span v-show="!edit">{{ post.name }}</span>(<span v-show="!edit">{{ post.username }}</span>)
+        <span v-show="!edit">{{ post.name }}</span><span v-show="!edit">({{ post.username }})</span>
         <input type="text" v-show="edit" v-model="post.name" />
         <input type="text" v-show="edit" v-model="post.username" />
         <address>
             <div v-for="(value, key) in post.address">
-                {{key}}: {{ value }}
+                {{key}}: <span v-show="!edit">{{ value }}</span><input type="text" v-show="edit" v-model="post.address[key][value]" />
             </div>
         </address>
         <button v-on:click="doDelete(post.id)" type="button">
