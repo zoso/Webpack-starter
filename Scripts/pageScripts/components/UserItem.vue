@@ -14,7 +14,7 @@
         <button v-on:click="editUser" type="button">
             Edit bruker
         </button>
-        <button v-on:click="saveUser" type="button">
+        <button v-on:click="saveUser(post.id)" type="button">
             Save bruker
         </button>
     </div>
@@ -35,8 +35,12 @@
             editUser: function() {
                 this.edit = !this.edit;
             },
-            saveUser: function() {
-
+            saveUser: function(id) {
+                const updated = {
+                    name: this.post.name,
+                    username: this.post.username
+                }
+                this.$emit('change-user', id, updated)
             }
         }
     }

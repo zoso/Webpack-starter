@@ -10,7 +10,7 @@
     export default {
         methods: {
             createUser: function() {
-                console.log("inser user");
+                console.log("insert user");
                 this.$emit('create-user');
             }
         }

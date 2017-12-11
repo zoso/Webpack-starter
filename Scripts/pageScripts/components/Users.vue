@@ -2,7 +2,7 @@
     <div class="users-container">
         <p>{{ posts.length }}</p>
         <div class="users">
-            <UserItem v-on:delete-user="deleteUser" v-for="post in posts" :post.sync="post" :key="post.id"></UserItem>
+            <UserItem v-on:delete-user="deleteUser" v-on:change-user="changeUser" v-for="post in posts" :post.sync="post" :key="post.id"></UserItem>
         </div>
         <div class="test">
             <InsertUser v-on:create-user="createUser"></InsertUser>
@@ -36,10 +36,25 @@
             },
             deleteUser: function(id) {
                 console.log("delete ", id);
-                this.$emit('update-users');
+                const that = this;
+                Axios.delete(`//localhost:3000/users/${id}`, {
+                    
+                }).then(function(res) {
+                    console.log("deleted", res);
+                    that.$emit('update-users');
+                })
+                
             },
-            changeUser: function() {
-
+            changeUser: function(id, data) {
+                console.log("change ", id);
+                const that = this;
+                Axios.put(`//localhost:3000/users/${id}`, {
+                    name: data.name,
+                    username: data.username
+                }).then(function(res) {
+                    console.log("changed", res);
+                    that.$emit('update-users');
+                })
             }
         }
     }
