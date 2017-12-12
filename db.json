@@ -12,9 +12,8 @@
       "id": 4
     },
     {
-      "name": "Freddy Fingerx",
+      "name": "Freddy Fingers",
       "username": "Flintstonez",
-      "email": "kdfeffekdkd@rffe.com",
       "id": 5
     },
     {
@@ -22,6 +21,11 @@
       "username": "Flintstonez",
       "email": "kdfeffekdkd@rffe.com",
       "id": 6
+    },
+    {
+      "name": "Freddy Fingerx",
+      "username": "Flintstonez",
+      "id": 7
     }
   ]
 }

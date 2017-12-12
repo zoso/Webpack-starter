@@ -12,6 +12,7 @@ let config = {
         fileA: './Scripts/pageScripts/fileA.js',
         fileB: './Scripts/pageScripts/fileB.js',
         vueApp: './Scripts/pageScripts/myVueEntryFile.js',
+        calculator: './Scripts/pageScripts/calcIndex.js',
         globalStyle: './Styles/global/scaffold.scss'
     },
     output: {

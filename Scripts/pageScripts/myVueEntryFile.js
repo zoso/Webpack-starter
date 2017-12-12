@@ -17,7 +17,7 @@ const vm = new Vue({
             console.log("fetch data");
             this.posts = [];
             Axios.get('//localhost:3000/users').then(res => {
-                console.log("fetching ", res.data.length);
+                console.log("fetching ", res.data);
                 this.posts = res.data;
             });
         }
