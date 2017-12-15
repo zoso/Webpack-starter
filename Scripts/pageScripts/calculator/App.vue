@@ -5,7 +5,7 @@
       <div v-for="step in posts.steps" :step.sync="step">
           <CalcStep v-bind:steps="step" />
       </div>   
-      
+      <Ground />
 
           <!-- <div v-for="step in posts.steps" :step.sync="step">
               <h2>{{ step.name }}</h2> 
@@ -17,10 +17,11 @@
 
 <script>
 import CalcStep from './CalcStep.vue'
+import Ground from './Ground.vue'
 
 export default {
     name: 'Calc',
     props: ['posts'],
-    components: { CalcStep }
+    components: { CalcStep, Ground }
 }
 </script>

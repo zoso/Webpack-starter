@@ -5,7 +5,7 @@ import Axios from 'axios'
 const vm = new Vue({
     el: '#calcApp',
     name: 'CalculatorApp',
-    template: '<App v-bind:posts="posts"></App>',
+    template: '<App v-bind:posts="posts" v-on:change-type="fetchData"></App>',
     data: {
         posts: {},
         selectedData: {}

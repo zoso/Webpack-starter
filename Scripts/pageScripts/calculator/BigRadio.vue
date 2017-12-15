@@ -1,6 +1,6 @@
 <template>
     <div class="step bigRadio">
-        <div class="item">
+        <div class="item img">
             <img v-bind:src="imgSrc()" />
         </div>
         <div class="item">
